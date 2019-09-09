@@ -276,7 +276,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">382</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">378</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,38 +407,53 @@ height:50vh;
     <article class="article-entry">
         <p><a href="https://jy-lab.github.io/2019/02/15/SN-contrl/" target="_blank" rel="noopener"><img src="/images/pylogo.png" width="400" height="150"></a></p>
 <a id="more"></a>
-<h1>我也是标题:Python处理 .txt</h1>
+<h1>🐍<a href="https://www.python.org/" target="_blank" rel="noopener">Python</a>处理.txt</h1>
+<br>
 <hr>
-<h1>一.前言</h1>
-<p>txt虽然可以利用excel处理<br>
-但是不严谨啊,处理速度慢啊☹️,<br>
-维护麻烦啊,Low啊!☹️<br>
-好了我编不下去了…😂</p>
-<h2 id="上菜吧">上菜吧</h2>
+<h1>. 前言</h1>
+<p><code>.txt</code>虽然可以利用<code>excel</code>处理<br>
+但是!</p>
+<ul>
+<li>不严谨啊,</li>
+<li>处理速度慢啊☹️,</li>
+<li>维护麻烦啊,Low啊!☹️</li>
+<li>好了我编不下去了…😂</li>
+</ul>
+<p><br><br></p>
+<hr>
+<h2 id="上菜吧">. 上菜吧</h2>
 <p>#控制每次提取n个无序的随机的data#<br>
-#每次从data.txt里提取要求的data个数#👀</p>
+#每次从<code>data.txt</code>里提取要求的data个数#👀<br>
+<br></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># !usr/bin/py3 #</span></span><br><span class="line"><span class="comment">#-*- coding: utf-8 -*-#</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys, os, time</span><br><span class="line">result = []</span><br><span class="line"><span class="comment">#读取data.txt丢进result里#</span></span><br><span class="line"><span class="keyword">with</span> open (<span class="string">'D:/data.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">        <span class="comment">#result.append(list(map(str, line.splitlines())))</span></span><br><span class="line">        result.append(line.strip(<span class="string">'\n'</span>).split(<span class="string">','</span>)[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#user input#</span></span><br><span class="line">print(<span class="string">"---SN码库剩余量为--- : "</span>,len(result))</span><br><span class="line">take_num = int(input(<span class="string">"---输入提取数量: "</span>))</span><br><span class="line">confirm_num = int(input(<span class="string">"---再次确认输入提取数量: "</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> take_num == confirm_num:</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'D:/SN_data.txt'</span>, <span class="string">'wt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result[<span class="number">0</span>:take_num]:</span><br><span class="line">            print(i, file = f)</span><br><span class="line">    print(<span class="string">"---已生成 D:\SN_data... "</span>)</span><br><span class="line">    <span class="keyword">del</span> result[<span class="number">0</span>:take_num]</span><br><span class="line">    print(<span class="string">"---写入更新data.txt"</span>)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'D:/data.txt'</span>,<span class="string">'wt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> result:</span><br><span class="line">        print(i, file = f)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"---当前data剩余量为 "</span>, len(result))</span><br><span class="line">    os.system(<span class="string">"pause"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"输入有误,请重试..."</span>)</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<br>
 <hr>
-<center><b>输出后是这个样子的😍</b></center>
+<p><br><br></p>
+<center><b>运行起来是这个样子的😍</b></center>
 <img src="/images/SN-contrl.jpg" width="250" height="150">
+<br><br>
 <hr>
-<h1>二.注意#</h1>
-<p>把<em>data.txt</em> 放在<b>D盘根目录</b>下操作的.<br>
-😄代码思路逻辑很简单,可一步步分析,适合入门,没有基础的人(例如我?)</p>
-<p><b>那么问题来了😨<br>
-该如何运行在普通电脑上呢?</b></p>
+<br>
+<h1>. 注意#</h1>
+<p><code>data.txt</code>是放在<code><b>D盘根目录</b></code>下操作的.</p>
+<p>😄代码思路逻辑很简单,我就不多说了,适合入门,没有基础的人.(例如我?)</p>
+<p><b>那么问题来了😨</b></p>
+<p>该如何运行在普通电脑上呢?<br>
+<br><br></p>
 <hr>
-<h1>三.打包带走.exe</h1>
+<h1>. 打包带走.exe</h1>
 <center>没错,是打包.😎</center>
 <img src="/images/1.jpg">
-<p>在cmd或者terminal里,pip安装</p>
+<p>在<code>cmd</code>或者<code>terminal</code>里,<code>pip</code>安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyinstaller</span><br></pre></td></tr></table></figure>
-<p>(顺便一说Python的IDE我更喜欢用<b>👉<a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">Pycharm</a>)</b></p>
+<br>
+(顺便一说Python的IDE我更喜欢用<b>👉[Pycharm](https://www.jetbrains.com/pycharm/))
 <p>安装好pyinstaller后</p>
-<p>在cmd或者terminal里,cd进入到你写的py文件目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --console --onefile 我要打包的东西.py</span><br></pre></td></tr></table></figure>
-<p>回车,收工😉</p>
-
+<p>在<code>cmd</code>或者<code>terminal</code>里,<code>cd</code>进入到你写的py文件目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --console --onefile 要打包的东西.py</span><br></pre></td></tr></table></figure>
+<br>
+回车!收工!😊<br><br><br><br><br><br><br><br>
+</b>
     </article>
     <!-- license  -->
     
@@ -446,7 +461,7 @@ height:50vh;
             <p>原文作者：<a href="">Jy</a>
             <p>原文链接：<a href="/2019/02/15/SN-contrl/"><span>www.jyyy.me</span>/2019/02/15/SN-contrl/</a>
             <p>发表日期：<a href="/2019/02/15/SN-contrl/">February 15th 2019, 9:33:48 pm</a>
-            <p>更新日期：<a href="/2019/02/15/SN-contrl/">September 8th 2019, 8:24:11 pm</a>
+            <p>更新日期：<a href="/2019/02/15/SN-contrl/">September 9th 2019, 5:07:12 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -582,7 +597,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">我也是标题:Python处理 .txt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">一.前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#上菜吧"><span class="toc-number">2.1.</span> <span class="toc-text">上菜吧</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">二.注意#</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">三.打包带走.exe</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">🐍Python处理.txt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">. 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#上菜吧"><span class="toc-number">2.1.</span> <span class="toc-text">. 上菜吧</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">. 注意#</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">. 打包带走.exe</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
