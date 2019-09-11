@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello World · Jy Blog,Jy的世界</title>
+    <title>Netgear(网件)R6220无线WiFi刷LEDE &amp; 救砖 · Jy Blog,Jy的世界</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -221,7 +221,7 @@
                 <a href="/" >Jy Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">Netgear(网件)R6220无线WiFi刷LEDE & 救砖</a>
             </div>
     </div>
     
@@ -252,7 +252,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            Netgear(网件)R6220无线WiFi刷LEDE & 救砖
             <!-- 404 -->
             
         </h1>
@@ -269,14 +269,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "WiFi">WiFi</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">8</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">647</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/09/01</span>
+                    <span class="post-intro-time">2019/03/10</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -400,10 +406,83 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1>Welcome</h1>
-<h2 id="none"></h2>
-<h3 id="😊站点从wordpress迁移到github😊">😊站点从wordpress迁移到github😊</h3>
-<p><br><br><br><br><br><br></p>
+        <p><a href="www.jyyy.me/2019/03/10/R6220-LEDE/"><img src="/images/lede.jpg" width="250" height="130"></a></p>
+<a id="more"></a>
+<h1>Netgear(网件)R6220无线WiFi刷LEDE</h1>
+<hr>
+<p><br><br></p>
+<h1>一. <s>首先砸咋们来了解一下什么是LEDE</s></h1>
+<p><br>普通家用 用户🧐<br>你只需要知道<a href="https://openwrt.org/" target="_blank" rel="noopener">LEDE</a>相对于官方固件系统</p>
+<ul>
+<li>性能<b>稳定,强大</b>.可扩展性高,安全系数高.</li>
+<li>提供丰富的<b>插件功能.(广告过滤,内网穿透,翻qiang的V2ray😍等等)</b></li>
+<li><b>开源免费</b>,有很多强大的社区维护.<br>
+<br><br><br><br></li>
+</ul>
+<img src="/images/kaishi.png" width="150" height="150">
+<br>
+<hr>
+<p><br><br></p>
+<h1>二. 固件下载</h1>
+<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://pan.baidu.com/s/1z2QDd82G1VbhKA4tHkYNsA 提取码: uiqt</span><br></pre></td></tr></table></figure>
+<p>如失效了可以联系我重传😊</p>
+<p>下载后为了方便操作更改文件名字为<br>
+1.R6220-rootfs.bin<br>
+2.R6220-kernel.bin</p>
+<p>接着把这两个文件丢到U盘里</p>
+<hr>
+<p><br><br></p>
+<h1>三. 写入路由器</h1>
+<br>
+<p><b>U盘插好,电脑接入到路由器中</b>, 打开<a href="https://jingyan.baidu.com/article/870c6fc3cd6fa9b03fe4bee4.html" target="_blank" rel="noopener">电脑的Telnet功能</a>win7&amp;win10大同小异.<br>
+<br></p>
+<p>紧接着在浏览器里访问:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.1.1/setup.cgi?todo=debug</span><br></pre></td></tr></table></figure>
+<br>
+<p>显示 Debug Enabled 就是成功, 进入了路由器的debug模式.</p>
+<br>
+<p>这时候快捷键 Win + R + cmd 立马回车一顿骚操作🤣, 快速打开cmd命令行<br>
+<br></p>
+<p>在cmd里:<br></p>
+<p><b><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet 192.168.1.1</span><br></pre></td></tr></table></figure></b></p>
+
+<p>然后以<code>root</code> 登录.</p>
+<p>找出出U盘的两个文件<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls /mnt/shares</span><br><span class="line">cd /mnt/shares/U</span><br></pre></td></tr></table></figure>
+<br>
+<p>再次<code>ls</code>的话,应该可以看到你下载的两个文件了.<br>
+写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mtd_write write R6220-rootfs.bin Rootfs</span><br><span class="line">mtd_write write R6220-kernel.bin Kernerl</span><br></pre></td></tr></table></figure>
+<br>
+<p>重启路由器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<br>
+<p>重启后,浏览器进入到 <code>192.168.1.1</code><br>
+<br><br>
+漂亮的LEDE界面为你呈现😃.可以愉快地安装神奇的插件了.<br>
+<br><br>
+<img src="/images/yes.jpg" width="150" height="150"></p>
+<p><br><br><br><br></p>
+<hr>
+<h1>四. 如果你的路由器变砖了…</h1>
+<p>这里简单直接给出最硬核的方法.💪硬刷<br>
+<b>适合任何型号Netgear的路由器救砖</b></p>
+<p>工具项目地址: <a href="https://github.com/jclehner/nmrpflash/releases" target="_blank" rel="noopener">https://github.com/jclehner/nmrpflash/releases</a><br>
+下载路由器官方系统固件: <a href="https://www.netgear.com/support/" target="_blank" rel="noopener">https://www.netgear.com/support/</a></p>
+<p>都放到D盘根目录下便于操作<br>
+以管理员运行cmd,进入到D盘<br>
+列出网卡信息,看看路由器是net几</p>
+<p><code>nmrpflash.exe -L</code>   通常是net0或者net1,最多net2吧.<br>
+然后写入<br>
+<code>例子: nmrpflash.exe -i net0 -a 192.168.1.1 -f R7000-V1.0.7.2_1.1.93.chk</code><br>
+❗<b>命令暂时不要回车.保持路由器连接着电脑,此时去捅路由器屁股的重置键reset.<br>
+等待数秒,放开.在cmd里快速多次回车命令<br>
+(小键盘的向上键) ↑ + 回车. 如果路由器接受到命令了就会显示</b>❗不行就多试几次,把握好节奏🥺.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Advertising NMRP server on net0 ... /</span><br><span class="line">Received TFTP_UL_REQ while waiting for CONF_REQ!</span><br><span class="line">Received upload request with empty filename.</span><br><span class="line">Uploading R7000-V1.0.7.2_1.1.93.chk ... OK</span><br><span class="line">Waiting for remote to respond.</span><br><span class="line">Received keep-alive request.</span><br><span class="line">Remote finished. Closing connection.</span><br><span class="line">Reboot your device now.</span><br></pre></td></tr></table></figure>
+<p>硬刷完毕,希望用不上这一步.<br>
+<br><br><br>&gt;</p>
+<p>收工!😊<br><br><br><br><br><br><br><br></p>
 
     </article>
     <!-- post以后接上打赏btn  -->
@@ -415,9 +494,9 @@ height:50vh;
     
         <div class="license-wrapper">
             <p>原文作者：<a href="">Jy</a>
-            <p>原文链接：<a href="/2019/09/01/hello-world/"><span>www.jyyy.me</span>/2019/09/01/hello-world/</a>
-            <p>发表日期：<a href="/2019/09/01/hello-world/">September 1st 2019, 12:00:00 am</a>
-            <p>更新日期：<a href="/2019/09/01/hello-world/">September 10th 2019, 7:18:56 pm</a>
+            <p>原文链接：<a href="/2019/03/10/R6220-LEDE/"><span>www.jyyy.me</span>/2019/03/10/R6220-LEDE/</a>
+            <p>发表日期：<a href="/2019/03/10/R6220-LEDE/">March 10th 2019, 12:00:00 am</a>
+            <p>更新日期：<a href="/2019/03/10/R6220-LEDE/">September 11th 2019, 4:25:31 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -425,12 +504,17 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/09/01/hello-world/" title= "Hello World">
+                    <div class="nextTitle">Hello World</div>
+                </a>
+            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/03/10/R6220-LEDE/" title= "Netgear(网件)R6220无线WiFi刷LEDE & 救砖">
-                    <div class="prevTitle">Netgear(网件)R6220无线WiFi刷LEDE & 救砖</div>
+                <a href= "/2019/02/15/SN-contrl/" title= "Python处理txt数据 & 打包EXE.">
+                    <div class="prevTitle">Python处理txt数据 & 打包EXE.</div>
                 </a>
             
         </li>
@@ -556,7 +640,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">Welcome</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#none"><span class="toc-number">1.1.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#😊站点从wordpress迁移到github😊"><span class="toc-number">1.1.1.</span> <span class="toc-text">😊站点从wordpress迁移到github😊</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">Netgear(网件)R6220无线WiFi刷LEDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">一. 首先砸咋们来了解一下什么是LEDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">二. 固件下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">三. 写入路由器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">5.</span> <span class="toc-text">四. 如果你的路由器变砖了…</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
