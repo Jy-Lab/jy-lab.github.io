@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello World · Jy Blog,Jy的世界</title>
+    <title>Python实现黑客帝国中的数字雨 · Jy Blog,Jy的世界</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -221,7 +221,7 @@
                 <a href="/" >Jy Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">Python实现黑客帝国中的数字雨</a>
             </div>
     </div>
     
@@ -252,7 +252,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            Python实现黑客帝国中的数字雨
             <!-- 404 -->
             
         </h1>
@@ -269,14 +269,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">8</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">232</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/09/01</span>
+                    <span class="post-intro-time">2019/07/30</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -400,10 +406,20 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1>Welcome</h1>
-<h2 id="none"></h2>
-<h3 id="😊站点从wordpress迁移到github😊">😊站点从wordpress迁移到github😊</h3>
-<p><br><br><br><br><br><br></p>
+        <p><a href="/2019/7/30/Num-Rain"><img src="images/pylogo.png" width="380" height="130"></a></p>
+<a id="more"></a>
+<h1>PyGame模块实现数字雨💦</h1>
+<hr>
+<p><br><br><br>
+<img src="/images/reng.jpg" width="230" height="200"></p>
+<p><br><br></p>
+<hr>
+<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pygame, random</span><br><span class="line"><span class="comment">#定义pygame大小#</span></span><br><span class="line">screen_width = <span class="number">720</span></span><br><span class="line">screen_height = <span class="number">480</span></span><br><span class="line">font_size = <span class="number">15</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#初始化pagame#</span></span><br><span class="line">pygame.init()</span><br><span class="line"><span class="comment">#窗口#</span></span><br><span class="line">screen = pygame.display.set_mode((screen_width,screen_height))</span><br><span class="line"><span class="comment">#创建字体#</span></span><br><span class="line">font = pygame.font.SysFont(<span class="string">"1.ttf"</span>,<span class="number">25</span>)</span><br><span class="line"><span class="comment">#背景#</span></span><br><span class="line">bg_screen = pygame.Surface((screen_width,screen_height),flags=pygame.SRCALPHA)</span><br><span class="line"><span class="comment">#使用convert增加绘制速度#</span></span><br><span class="line">pygame.Surface.convert(bg_screen)</span><br><span class="line"></span><br><span class="line">bg_screen.fill(pygame.Color(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">20</span>))</span><br><span class="line"><span class="comment">#填黑#</span></span><br><span class="line">screen.fill((<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#落下字符范围#</span></span><br><span class="line">List_font = [font.render(str(i),<span class="literal">True</span>,(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>))<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#计算宽坐标生成一个以(width/font)大小的 坐标的list#</span></span><br><span class="line">cloumn =int(screen_width/font_size)</span><br><span class="line">drops =[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(cloumn)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#循环到天荒地老#</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():</span><br><span class="line">        <span class="keyword">if</span> event.type == pygame.QUIT:</span><br><span class="line">            exit() </span><br><span class="line"><span class="comment">#动作推迟30毫秒#</span></span><br><span class="line">    pygame.time.delay(<span class="number">30</span>)</span><br><span class="line"><span class="comment">#移动绘制#</span></span><br><span class="line">    screen.blit(bg_screen, (<span class="number">5</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment">#规定和改变drops位置#</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(drops)):</span><br><span class="line">        context = random.choice(List_font)</span><br><span class="line"></span><br><span class="line">        screen.blit(context, (i * font_size, drops[i] * font_size))</span><br><span class="line"></span><br><span class="line">        drops[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> drops[i] *<span class="number">10</span> &gt; screen_width <span class="keyword">or</span> random.random() &gt; <span class="number">0.97</span>:</span><br><span class="line">            drops[i] = <span class="number">0</span></span><br><span class="line"><span class="comment">#搞定#</span></span><br><span class="line">    pygame.display.flip()</span><br></pre></td></tr></table></figure>
+<br>
+<h4 id="注释写的很多了">注释写的很多了.</h4>
+<h2 id="收工-😊">收工!😊</h2>
+<p><br><br><br><br></p>
 
     </article>
     <!-- post以后接上打赏btn  -->
@@ -415,9 +431,9 @@ height:50vh;
     
         <div class="license-wrapper">
             <p>原文作者：<a href="">Jy</a>
-            <p>原文链接：<a href="/2019/09/01/hello-world/"><span>www.jyyy.me</span>/2019/09/01/hello-world/</a>
-            <p>发表日期：<a href="/2019/09/01/hello-world/">September 1st 2019, 12:00:00 am</a>
-            <p>更新日期：<a href="/2019/09/01/hello-world/">September 10th 2019, 7:18:56 pm</a>
+            <p>原文链接：<a href="/2019/07/30/Num-Rain/"><span>www.jyyy.me</span>/2019/07/30/Num-Rain/</a>
+            <p>发表日期：<a href="/2019/07/30/Num-Rain/">July 30th 2019, 11:30:15 pm</a>
+            <p>更新日期：<a href="/2019/07/30/Num-Rain/">September 11th 2019, 5:45:51 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -425,12 +441,17 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/09/01/hello-world/" title= "Hello World">
+                    <div class="nextTitle">Hello World</div>
+                </a>
+            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/07/30/Num-Rain/" title= "Python实现黑客帝国中的数字雨">
-                    <div class="prevTitle">Python实现黑客帝国中的数字雨</div>
+                <a href= "/2019/03/10/R6220-LEDE/" title= "Netgear(网件)R6220无线WiFi刷LEDE & 救砖">
+                    <div class="prevTitle">Netgear(网件)R6220无线WiFi刷LEDE & 救砖</div>
                 </a>
             
         </li>
@@ -556,7 +577,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">Welcome</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#none"><span class="toc-number">1.1.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#😊站点从wordpress迁移到github😊"><span class="toc-number">1.1.1.</span> <span class="toc-text">😊站点从wordpress迁移到github😊</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">PyGame模块实现数字雨💦</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注释写的很多了"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">注释写的很多了.</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#收工-😊"><span class="toc-number">1.1.</span> <span class="toc-text">收工!😊</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
