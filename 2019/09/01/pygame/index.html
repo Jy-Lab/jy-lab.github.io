@@ -277,7 +277,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">646</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">648</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -446,8 +446,8 @@ height:50vh;
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#接着我们要初始化pygame,这是规矩</span></span><br><span class="line">pygame.init()</span><br><span class="line"><span class="comment">#初始化音效,音乐(不要也行)</span></span><br><span class="line">pygame.mixer.init()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义屏幕,按照我们上面要求的width和height</span></span><br><span class="line">Screen = pygame.display.set_mode((Width,Height))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义时间速度</span></span><br><span class="line">clock = pygame.time.Clock()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个放所有脚本,动作的组,方便管理</span></span><br><span class="line">My_sprite = pygame.sprite.Group()</span><br></pre></td></tr></table></figure>
 <br>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义好上面的基础之后,我们开始让游戏运行,循环游戏.</span></span><br><span class="line"><span class="comment">#定义Running是True</span></span><br><span class="line">Running = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">while</span> Running:</span><br><span class="line">        <span class="comment">#一旦运行游戏,先把时间定死我们想要的FPS</span></span><br><span class="line">        clock.tick(FPS)</span><br><span class="line">        <span class="comment">#固定语句,保持获取用户的输入,事件</span></span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():</span><br><span class="line">            <span class="comment">#如果点游戏窗口的叉叉</span></span><br><span class="line">            <span class="keyword">if</span> event.type == pygame.QUIT:</span><br><span class="line">                running = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#有了运行游戏之后,我们需要一直刷新画面</span></span><br><span class="line">    <span class="comment">#(注意缩进在上面的while里面,表示在运行时进行)</span></span><br><span class="line">    My_sprite.update()</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">#填充屏幕,颜色是以三原色RGB为标准的.</span></span><br><span class="line">    Screen.fill((<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#背景屏幕填充后,在屏幕里绘画我们的动作脚本里的一切动作.</span></span><br><span class="line">    My_sprite.draw(screen)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#注意理解! 绘画之后,屏幕并不会有画面!!!我们要呈现的动作,脚本,</span></span><br><span class="line">    <span class="comment">#都要通过 flip 出来.这是pygame规定的.</span></span><br><span class="line">    pygame.display.flip()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#退出游戏(注意在缩进对齐running的)</span></span><br><span class="line">pygame.quit()</span><br></pre></td></tr></table></figure>
-<p>pycharm里右键run一下,因为我们只定义了基础框架,没意外的话,<br>
-<br>如果弹出一个黑漆漆的窗口.那么就代表你成功了.😊<br>
+<p>pycharm里右键run一下,因为我们只定义了基础框架,如果没意外的话,<br>
+<br>就会弹出一个黑漆漆的窗口.那么就代表你成功了.😊<br>
 <br><br>
 <img src="/images/yes.jpg" width="150" height="150"><br>
 <br><br></p>
@@ -469,7 +469,7 @@ height:50vh;
             <p>原文作者：<a href="">Jy</a>
             <p>原文链接：<a href="/2019/09/01/pygame/"><span>www.jyyy.me</span>/2019/09/01/pygame/</a>
             <p>发表日期：<a href="/2019/09/01/pygame/">September 1st 2019, 10:27:05 pm</a>
-            <p>更新日期：<a href="/2019/09/01/pygame/">September 17th 2019, 12:33:40 am</a>
+            <p>更新日期：<a href="/2019/09/01/pygame/">September 17th 2019, 12:37:23 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -670,6 +670,8 @@ top:50vh;
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 5
@@ -755,9 +757,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="有趣"><span class="iconfont-archer">&#xe60a;</span>有趣</span>
     
-        <span class="sidebar-category-name" data-categories="路由器"><span class="iconfont-archer">&#xe60a;</span>路由器</span>
-    
         <span class="sidebar-category-name" data-categories="Work"><span class="iconfont-archer">&#xe60a;</span>Work</span>
+    
+        <span class="sidebar-category-name" data-categories="路由器"><span class="iconfont-archer">&#xe60a;</span>路由器</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
