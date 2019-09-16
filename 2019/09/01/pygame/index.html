@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Jy Blog,Jy的世界</title>
+    <title>简单地用Pygame写小游戏(基础) · Jy Blog,Jy的世界</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -207,12 +207,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Jy Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">简单地用Pygame写小游戏(基础)</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Jy Blog.</a>
 </header>
@@ -225,24 +236,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            简单地用Pygame写小游戏(基础)
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">646</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/01</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -343,39 +404,106 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/02/15/SN-contrl/" >
-            
-                <span>Python处理txt数据 &amp; 打包EXE.</span>
-        </a>
-        <div class="abstract-content">
-            <p><a href="/2019/02/15/SN-contrl/"><img src="/images/pylogo.png" width="380" height="130"></a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p><a href="/2019/09/01/pygame/"><img src="/images/pylogo.png" width="380" height="130"></a></p>
+<a id="more"></a>
+<br>
+<h1>一. 例行前言</h1>
+<hr>
+<br>
+<br>
+<h4 id="1-电脑安装python3🐍">1,电脑安装<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python3</a>🐍</h4>
+<br>
+<h4 id="2-选择安装一个优秀的ide代码编辑器👉pycharm🥰当之无愧吧-一个优秀的编辑器可以让你事倍功半-当然你也可以选择在桌面新建笔记本-txt-摊手">2,选择安装一个优秀的IDE代码编辑器👉<a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">Pycharm</a>🥰当之无愧吧?一个优秀的编辑器可以让你事倍功半.当然你也可以选择在桌面新建笔记本.txt(摊手)</h4>
+<br>
+<br>
+<hr>
+<h1>二. 打开Pycharm添加pygame模块</h1>
+<h4 id="pygame是跨平台python模块-专为电子游戏设计-包含图像-声音">(Pygame是跨平台Python模块，专为电子游戏设计。包含图像、声音。)</h4>
+<p><br>添加步骤如下<br>
+<br></p>
+<center><b>左上角 file下的<code>settings...</code>
+<img src="/images/pygame1.png" width="250" height="250">
+<br>
+<p>点击右手边的<code> +号</code><br>
+<img src="/images/pygame2.jpg"><br>
+<br></p>
+<p>搜索<code>pygame</code>然后点击<code>install package</code>即可😄</p></b></center><br>
+<img src="/images/pygame3.jpg" width="350" height="350"><br><p></p>
+<hr>
+<br>
+<br>
+<br>
+<h1>三. import pygame</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pygame</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> random</span><br></pre></td></tr></table></figure>
+<p><code>time</code>呢,拿来控制游戏画面的快慢(帧),<br>
+<code>os</code>呢,就是帮我们读取系统文件(例如把主角换成想要的图片).<br>
+<code>random</code>则用来产生想要的数字.(例如用于产生1到100一共100个数字)<br>
+<br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#直接定义游戏窗口的大小的值,以像素为单位的.</span></span><br><span class="line">Width = <span class="number">720</span></span><br><span class="line">Height = <span class="number">480</span></span><br><span class="line">FPS =<span class="number">60</span></span><br><span class="line"><span class="comment">#这里定义了宽720 高480 60帧</span></span><br></pre></td></tr></table></figure>
+<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#接着我们要初始化pygame,这是规矩</span></span><br><span class="line">pygame.init()</span><br><span class="line"><span class="comment">#初始化音效,音乐(不要也行)</span></span><br><span class="line">pygame.mixer.init()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义屏幕,按照我们上面要求的width和height</span></span><br><span class="line">Screen = pygame.display.set_mode((Width,Height))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义时间速度</span></span><br><span class="line">clock = pygame.time.Clock()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个放所有脚本,动作的组,方便管理</span></span><br><span class="line">My_sprite = pygame.sprite.Group()</span><br></pre></td></tr></table></figure>
+<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义好上面的基础之后,我们开始让游戏运行,循环游戏.</span></span><br><span class="line"><span class="comment">#定义Running是True</span></span><br><span class="line">Running = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">while</span> Running:</span><br><span class="line">        <span class="comment">#一旦运行游戏,先把时间定死我们想要的FPS</span></span><br><span class="line">        clock.tick(FPS)</span><br><span class="line">        <span class="comment">#固定语句,保持获取用户的输入,事件</span></span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():</span><br><span class="line">            <span class="comment">#如果点游戏窗口的叉叉</span></span><br><span class="line">            <span class="keyword">if</span> event.type == pygame.QUIT:</span><br><span class="line">                running = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#有了运行游戏之后,我们需要一直刷新画面</span></span><br><span class="line">    <span class="comment">#(注意缩进在上面的while里面,表示在运行时进行)</span></span><br><span class="line">    My_sprite.update()</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">#填充屏幕,颜色是以三原色RGB为标准的.</span></span><br><span class="line">    Screen.fill((<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#背景屏幕填充后,在屏幕里绘画我们的动作脚本里的一切动作.</span></span><br><span class="line">    My_sprite.draw(screen)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#注意理解! 绘画之后,屏幕并不会有画面!!!我们要呈现的动作,脚本,</span></span><br><span class="line">    <span class="comment">#都要通过 flip 出来.这是pygame规定的.</span></span><br><span class="line">    pygame.display.flip()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#退出游戏(注意在缩进对齐running的)</span></span><br><span class="line">pygame.quit()</span><br></pre></td></tr></table></figure>
+<p>pycharm里右键run一下,因为我们只定义了基础框架,没意外的话,<br>
+<br>如果弹出一个黑漆漆的窗口.那么就代表你成功了.😊<br>
+<br><br>
+<img src="/images/yes.jpg" width="150" height="150"><br>
+<br><br></p>
+<hr>
+<h1>四. 不要白费你的功夫</h1>
+<h4 id="这份代码可以保存为一个副本-要写pygame小游戏的时候可以快速copy一下">这份代码可以保存为一个副本,要写pygame小游戏的时候可以快速copy一下.</h4>
+<h4 id="从中添加-改造成一切你想要的模样-😉">从中添加,改造成一切你想要的模样.😉</h4>
+<p><br><br><br><br><br><br></p>
+
     </article>
+    <!-- post以后接上打赏btn  -->
+    <center> 如对你有帮助</center>
+    <center>👇对我小支持</center>
+    <iframe src="https://rawcdn.githack.com/Jy-Lab/donate-page/baa6c84a8030a217463df847c2f0733c32a9f4ca/simple/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
+    
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="">Jy</a>
+            <p>原文链接：<a href="/2019/09/01/pygame/"><span>www.jyyy.me</span>/2019/09/01/pygame/</a>
+            <p>发表日期：<a href="/2019/09/01/pygame/">September 1st 2019, 10:27:05 pm</a>
+            <p>更新日期：<a href="/2019/09/01/pygame/">September 17th 2019, 12:33:40 am</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/01/hello-world/" title= "Hello World">
+                    <div class="prevTitle">Hello World</div>
+                </a>
+            
+        </li>
+    </ul>
+
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+
+ 
 </main>
             <!-- profile -->
             
@@ -464,6 +592,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">一. 例行前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-电脑安装python3🐍"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1,电脑安装Python3🐍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-选择安装一个优秀的ide代码编辑器👉pycharm🥰当之无愧吧-一个优秀的编辑器可以让你事倍功半-当然你也可以选择在桌面新建笔记本-txt-摊手"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2,选择安装一个优秀的IDE代码编辑器👉Pycharm🥰当之无愧吧?一个优秀的编辑器可以让你事倍功半.当然你也可以选择在桌面新建笔记本.txt(摊手)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">二. 打开Pycharm添加pygame模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pygame是跨平台python模块-专为电子游戏设计-包含图像-声音"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">(Pygame是跨平台Python模块，专为电子游戏设计。包含图像、声音。)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">三. import pygame</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">四. 不要白费你的功夫</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#这份代码可以保存为一个副本-要写pygame小游戏的时候可以快速copy一下"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">这份代码可以保存为一个副本,要写pygame小游戏的时候可以快速copy一下.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#从中添加-改造成一切你想要的模样-😉"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">从中添加,改造成一切你想要的模样.😉</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -646,6 +792,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
